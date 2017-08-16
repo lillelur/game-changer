@@ -1,0 +1,23 @@
+
+
+<p id="notice"><%= notice %></p>
+
+<h1>Game Changer</h1>
+
+<h3>Welcome to the best Game Portal on the Internet!</h3>
+
+<center>
+  <% @games.each do |game| %>
+    <h2><%= link_to game.title, game.url %></h2>
+    <p>
+      <%= link_to 'Edit', edit_game_path(game) %></td>
+      <%= link_to 'Destroy', game, method: :delete, data: { confirm: 'Are you sure?' } %>
+    </p>
+    <h3>Posted by <%= game.poster %></h3>
+  <% end %>
+</center>
+
+<br>
+
+<h2><%= link_to 'New Game', new_game_path %></h2>
+

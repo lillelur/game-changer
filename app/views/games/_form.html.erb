@@ -1,0 +1,35 @@
+<div style="max-width: 500px">
+<%= form_with(model: game, local: true) do |form| %>
+  <% if game.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(game.errors.count, "error") %> prohibited this game from being saved:</h2>
+
+      <ul>
+      <% game.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <h2><%= form.label :title %></h2>
+    <%= form.text_field :title, id: :game_title, placeholder: "Agar.io" %>
+  </div>
+
+  <div class="field">
+    <h2><%= form.label :url %></h2>
+    <%= form.text_field :url, id: :game_url, placeholder: "http://agar.io" %>
+  </div>
+
+  <div class="field">
+    <h2><%= form.label :poster %></h2>
+    <%= form.text_field :poster, id: :game_poster, placeholder: "steve" %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
+</div>
+</center>
